@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: oc-hello-service
+  name: oc-hello-service
+spec:
+  ports:
+    - name: 80-9000
+      port: 80
+      protocol: TCP
+      targetPort: 9000
+  selector:
+    app: oc-hello-service
+  type: ClusterIP
+status:
+  loadBalancer: {}

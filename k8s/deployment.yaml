@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: oc-hello-service
+  name: oc-hello-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oc-hello-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: oc-hello-service
+    spec:
+      containers:
+        - image: 4garfield/oc-hello-service:snapshot
+          name: oc-hello-service
+          resources: {}
+status: {}
