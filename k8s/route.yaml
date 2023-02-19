@@ -1,0 +1,10 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: oc-hello-route
+spec:
+  to:
+    kind: Service
+    name: oc-hello-service-service
+  port:
+    targetPort: 9000

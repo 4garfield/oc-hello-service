@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oc-hello-deployment
+  labels:
+    app: oc-hello-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: oc-hello-service
+  template:
+    metadata:
+      labels:
+        app: oc-hello-service
+    spec:
+      containers:
+        - image: image-registry.openshift-image-registry.svc:5000/oc-hello-project/oc-hello-service:0.1.0-SNAPSHOT
+          name: oc-hello-service
+          ports:
+            - containerPort: 9000
