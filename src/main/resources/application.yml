@@ -1,2 +1,11 @@
 server:
   port: 9000
+
+management:
+  server:
+    port: 9001
+    address: 127.0.0.1
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
