@@ -32,7 +32,7 @@ To push to local openshift container registry, we need:
 "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ```
 
-3. `podman` command logon local registry: `echo $(oc whoami -t) | podman login -u developer --password-stdin $(oc registry info) --tls-verify=false`
+3. open new shell window, type `podman` command to logon local registry: `echo $(oc whoami -t) | podman login -u developer --password-stdin $(oc registry info) --tls-verify=false`
 4. add tag to the image: `podman tag oc-hello-service:0.1.0-SNAPSHOT $(oc registry info)/$(oc project -q)/oc-hello-service:0.1.0-SNAPSHOT`
 5. push the image to local registry: `podman push $(oc registry info)/$(oc project -q)/oc-hello-service:0.1.0-SNAPSHOT`
 
@@ -44,4 +44,4 @@ Create yaml files. The `route.yaml` is openshift specfic, other yaml files are s
 
 After the application deployed, check the status of pods: `oc get pods`
 
-To access the application. First, get the assigned hostname: `oc get routes`. Then, open browser to access, like: `http://oc-hello-route-oc-hello-project.apps-crc.testing/greeting`
+To access the application. First, get the assigned hostname: `oc get routes`. Then, open browser to access, like: `http://oc-hello-route-oc-hello-project.apps-crc.testing/v1/app/greeting`.

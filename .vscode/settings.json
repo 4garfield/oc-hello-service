@@ -5,8 +5,9 @@
   "editor.tabSize": 2,
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
-  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.configuration.updateBuildConfiguration": "automatic",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "One Dark Pro",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.colorTheme": "Dracula",
+  "workbench.iconTheme": "material-icon-theme",
+  "java.compile.nullAnalysis.mode": "automatic"
 }

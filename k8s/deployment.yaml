@@ -19,3 +19,10 @@ spec:
           name: oc-hello-service
           ports:
             - containerPort: 9000
+          readinessProbe:
+            httpGet:
+              path: /v1/actuator/health
+              port: 9000
+            initialDelaySeconds: 15
+            periodSeconds: 60
+            timeoutSeconds: 5

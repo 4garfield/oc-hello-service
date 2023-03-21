@@ -15,14 +15,14 @@ import org.springframework.test.web.servlet.MockMvc;
 @AutoConfigureMockMvc
 public class ApplicationTests {
 
-	@Autowired
-	private MockMvc mockMvc;
+  @Autowired
+  private MockMvc mockMvc;
 
-	@Test
-	public void defaultGreeting() throws Exception {
-		this.mockMvc.perform(get("/greeting"))
-				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.content").value("Hello, World!"));
-	}
+  @Test
+  public void defaultGreeting() throws Exception {
+    this.mockMvc.perform(get("/app/greeting"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.content").value("Hello, World!"));
+  }
 
 }

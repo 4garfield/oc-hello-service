@@ -1,3 +1,4 @@
+# Mac
 .DS_STORE
 
 # Compiled class file
@@ -15,4 +16,5 @@
 *.tar.gz
 *.rar
 
+# build output
 target
